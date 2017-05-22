@@ -15,7 +15,7 @@ Below are a list of models I'd like to apply, using various techniques and visua
 2. SVM
 3. Decision Tree
 4. Regression tree
-5. Simple linear regression
+5. 
 6. Markov chain
 7. K-means clustering
 8. K-nearest neighbour clustering
