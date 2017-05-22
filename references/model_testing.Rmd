@@ -1,0 +1,36 @@
+---
+title: "Modeling hitlist"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Model testing & practice
+Below are a list of models I'd like to apply, using various techniques and visualisation
+
+0. Simple linear regression and multivariate linear regression
+1. Neural Nets
+2. SVM
+3. Decision Tree
+4. Regression tree
+5. Simple linear regression
+6. Markov chain
+7. K-means clustering
+8. K-nearest neighbour clustering
+9. Visualizing model tuning parameters
+10. Reinforcement learning
+11. Principal components analysis
+12. Recurrent neural network
+13. Convolutional neural network
+14. Bagging
+15. XGboost
+16. Adaboost
+17. A/B test with visualized results
+18. Latent Derichlet Allocation for text
+19. Bag of words transformation
+20. T.Test
+21. Correlation matrix
+22. Gradiant Descent visualization
+23. Confusion Matrix visualization

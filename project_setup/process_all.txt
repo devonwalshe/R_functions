@@ -1,0 +1,12 @@
+process_${project_shortname} = function(${project_shortname}_raw){
+  ${project_shortname}_processed = ${project_shortname}_raw
+  
+  ${project_shortname}_processed = import_string_normalize(${project_shortname}_processed)
+  
+  ${process_strings}
+
+
+  ${return_string}
+}
+
+${process_individual_strings}

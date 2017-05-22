@@ -1,0 +1,7 @@
+process_${dataset_name} = function(${dataset_name}){
+  ${dataset_name}_processed = ${dataset_name}
+  
+  ### put stuff here
+
+  return(${dataset_name}_processed)
+}

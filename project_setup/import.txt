@@ -1,0 +1,6 @@
+import_${project_shortname} = function(){
+
+  ${file_string}
+  
+  return(${return_list})
+}

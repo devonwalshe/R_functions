@@ -1,0 +1,115 @@
+---
+title: "Package reference"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Package description 
+
+## MICE
+```{r eval=FALSE}
+library(mice)
+```
+* multiple imputation by chained equations
+* one stop shop for filling in (imputing) missing data for modelling
+
+### caret
+```{r eval=FALSE}
+library(caret)
+```
+* Classification and Regression Training
+* ONe of the best packages for model evaluation and tuning
+* Full scope for modelling - data partitioning, model selection, plotting, evaluating fit, etc...
+
+### randomForest
+```{r eval=FALSE}
+library(randomForest)
+```
+* The standard random forest algorithm package
+* Multiple decision trees with random initialization
+
+### rpart
+```{r eval=FALSE}
+library(rpart)
+```
+* Recursive partitioning and regression trees
+* Several functions to employ decision tree regression and classification models
+* Often used for its plotting function which shows you the breakdown of the regression tree
+
+### Party
+```{r eval=FALSE}
+library(party)
+```
+* More recursive partitioning
+* Includes ensemble methods for model fitting
+
+### nnet
+```{r eval=FALSE}
+library(nnet)
+```
+* Basic neural net package
+* Only allows 1 hidden layer
+
+### e1071
+```{r eval=FALSE}
+library(e1071)
+```
+* Support Vector Machine package
+
+### kernLab
+```{r eval=FALSE}
+library(kernLab)
+```
+* Package for kernel based algorithms and models, clustering, svm, PCA, etc
+* SVM, kernel feature analysis, dotproduct primitives, ranking algorithm, Gaussian processes
+
+### Igraph
+```{r eval=FALSE}
+library(igraph)
+```
+* Network analysis package
+
+### ROCR
+```{r eval=FALSE}
+library(ROCR)
+```
+* visualizing the performance of scoring classifiers
+
+### IPRED
+```{r eval=FALSE}
+library(ipred)
+```
+* Improved prediction
+* Bagging
+
+### RATTLE
+```{r eval=FALSE}
+library(rattle)
+```
+* R analytical tool to learn easily
+* Provides a number of gui functions to help visualize data
+
+### gbm
+```{r eval=FALSE}
+library(gbm)
+```
+* Gradient Boosting Machine
+* Better optimisation of classification and regression problems using gradient boost /adaboost algo
+
+### TAU
+```{r eval=FALSE}
+library(tau)
+```
+* Text analysis utilitite
+
+### glmnet
+```{r eval=FALSE}
+library(glmnet)
+```
+* Lasso and Elastic-net Regularized generalized linear models
+
+### More references:
+[Computer world article on R data wrangling packages](http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html)
