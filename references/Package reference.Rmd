@@ -105,6 +105,14 @@ library(tau)
 ```
 * Text analysis utilitite
 
+### dummy
+```{r eval=FALSE}
+library(dummy)
+## Usage:
+cbind(iris[,-5], dummy(iris))
+```
+* Creates dummy variables from categorical
+
 ### glmnet
 ```{r eval=FALSE}
 library(glmnet)
