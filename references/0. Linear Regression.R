@@ -36,23 +36,24 @@ car_cplot = ggcorrplot(car_corr, method='square', hc.order=TRUE , type=c('lower'
                        lab='true', p.mat=car_corr_p, insig='blank', show.legend=FALSE, lab_size=3)
 
 ### Apply factors to vs, am, cyl, gear and carb
-mtcars_factor = mtcars
-mtcars_factor[,c("vs", "am", "cyl", "gear", "carb")]  = lapply(mtcars_factor[,c("vs", "am", "cyl", "gear", "carb")], as.factor)
+mtlr = mtcars
+mtlr_factor = mtlr
+mtlr_factor[,c("vs", "am", "cyl", "gear", "carb")]  = lapply(mtlr_factor[,c("vs", "am", "cyl", "gear", "carb")], as.factor)
 
 ### Fit model for mpg
-car_fit = lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am+gear+carb, data=mtcars )
-car_factor_fit = lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am+gear+carb, data=mtcars_factor )
+car_fit = lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am+gear+carb, data=mtlr )
+car_factor_fit = lm(mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am+gear+carb, data=mtlr_factor )
 
 ### Test it out
-mtcars$mpg_vanilla_pred = predict(car_fit, mtcars)
-mtcars$mpg_factor_pred = predict(car_factor_fit, mtcars_factor)
+mtlr$mpg_vanilla_pred = predict(car_fit, mtlr)
+mtlr$mpg_factor_pred = predict(car_factor_fit, mtlr_factor)
 
 ### Plot the error
 library(reshape2)
-mtcars$model = row.names(mtcars)
-mtmelt = melt(mtcars[,c('model', 'mpg', 'mpg_factor_pred', 'mpg_vanilla_pred')], id.vars="model")
+mtlr$model = row.names(mtlr)
+mtmelt = melt(mtlr[,c('model', 'mpg', 'mpg_factor_pred', 'mpg_vanilla_pred')], id.vars="model")
 
-mtmelt$model = factor(mtmelt$model, levels = row.names(mtcars[order(mtcars$mpg),]))
+mtmelt$model = factor(mtmelt$model, levels = row.names(mtlr[order(mtlr$mpg),]))
 ggplot(mtmelt, aes(x=model, y=value, group=variable, colour=variable)) +
   geom_line(aes(group=variable)) +
   theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1),
@@ -60,9 +61,9 @@ ggplot(mtmelt, aes(x=model, y=value, group=variable, colour=variable)) +
         panel.grid.major=element_line(colour="#dddddd", size=0.1))
 
 # interesting the factor model has less overall error
-mtcars = mtcars %>% mutate(v_error = mpg_vanilla_pred-mpg, f_error = mpg_factor_pred-mpg) 
-sum(mtcars$v_error^2)
-sum(mtcars$f_error^2)
+mtlr = mtlr %>% mutate(v_error = mpg-mpg_vanilla_pred, f_error = mpg-mpg_factor_pred) 
+sqrt(mean(mtlr$v_error^2))
+sqrt(mean(mtlr$f_error^2))
 
 # Thats enough for now
 
